@@ -1,0 +1,6 @@
+ # Example role included. You should provide your own requirements-file
+---
+- name: nomad
+  src: https://github.com/www-aiqu-no/ansible-nomad.git
+  version: v0.1.0
+...

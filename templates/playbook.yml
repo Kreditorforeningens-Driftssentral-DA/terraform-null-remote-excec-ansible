@@ -1,0 +1,24 @@
+# Example playbook. You should include your own
+---
+- hosts: all
+  tasks:
+    - name: Install HashiCorp Nomad
+      include_role:
+        name: nomad
+      vars:
+        version: "0.12.5"
+        config_overrides:
+          bind_addr: "0.0.0.0"
+          server:
+            enabled: true
+            bootstrap_expect: 1
+            raft_protocol: 3
+          client:
+            enabled: true
+            node_class: single-node
+          telemetry:
+            publish_allocation_metrics: true
+            publish_node_metrics: true
+            collection_interval: "15s"
+            prometheus_metrics: true
+...
