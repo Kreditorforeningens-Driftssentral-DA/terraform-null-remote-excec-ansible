@@ -4,13 +4,11 @@ NOTE: No parameters are actually required, even if terraform registry states the
 
 A minimum set of parameters SHOULD be set to make the module do anything useful:
 
-```bash
 - target_adresses
 - connection_username
 - ssh_private_key (or other authentication method)
 - ansible_requirements_b64
 - ansible_playbook_b64
-```
 
 ## DESCRIPTION
 
@@ -41,5 +39,17 @@ ansible-playbook playbook.yml
 ```
 
 ## EXAMPLES
+
+```bash
+module "install_something" {
+  source  = "Kreditorforeningens-Driftssentral-DA/remote-excec-ansible/null"
+  version = "0.1.0"
+  # --
+  target_adresses     = ["10.0.200.10","10.0.200.11","10.0.200.12"]
+  connection_username = "provisioner"
+  connection_password = "YouShouldUseKeyInstead"
+  connection_port     = 22
+}
+```
 
 See the 'example' folder for working examples
