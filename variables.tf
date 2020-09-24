@@ -1,5 +1,4 @@
 locals {
-
   connection = {
     # { this line is included due to visual bug in editor, and serves no purpose }
     type        = var.connection_type
@@ -37,23 +36,13 @@ locals {
 }
 
 # ===============================================
-# OPTIONAL
+#  Provisioning targets
 # ===============================================
 
 variable "target_adresses" {
   type        = list(string)
-  description = "(Optional) List of addresses to provision."
+  description = "(Optional) List of target addresses to provision"
   default     = []
-}
-
-variable "ansible_commands" {
-  type        = list(string)
-  description = "(Optional) List of commands to execute at end of provisioning."
-  default     = [
-    "cd /tmp/ansible",
-    "ansible-galaxy install -r roles/requirements.yml",
-    "ansible-playbook playbook.yml",
-  ]
 }
 
 # ===============================================
@@ -79,7 +68,36 @@ variable "winrm_cacert"        { default = null }
 # Ansible settings
 # ===============================================
 
-variable "ansible_settings_b64"     { default = null }
-variable "ansible_hosts_b64"        { default = null }
-variable "ansible_requirements_b64" { default = null }
-variable "ansible_playbook_b64"     { default = null }
+variable "ansible_settings_b64" {
+  type        = string
+  description = "(Optional) Ansible settings-file. Provide as a base64encoded string"
+  default     = null
+}
+
+variable "ansible_hosts_b64"{
+  type        = string
+  description = "(Optional) Ansible hosts-file. Provide as a base64encoded string"
+  default     = null
+}
+
+variable "ansible_requirements_b64" {
+  type        = string
+  description = "(Optional) Requirements-file processed by ansible-galaxy before running playbook. Provide as a base64encoded string"
+  default     = null
+}
+
+variable "ansible_playbook_b64" {
+  type        = string
+  description = "(Optional) Playbook executed by ansible. Provide as a base64encoded string"
+  default     = null
+}
+
+variable "ansible_commands" {
+  type        = list(string)
+  description = "(Optional) List of commands to execute at end of provisioning."
+  default     = [
+    "cd /tmp/ansible",
+    "ansible-galaxy install -r roles/requirements.yml",
+    "ansible-playbook playbook.yml",
+  ]
+}
