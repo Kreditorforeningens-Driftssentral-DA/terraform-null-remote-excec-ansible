@@ -1,5 +1,5 @@
 module "install_nomad" {
-  source = "../."
+  source = "../../."
   # --
   target_adresses     = local.targets
   connection_username = local.ssh_username
