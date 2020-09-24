@@ -1,9 +1,10 @@
 # CHANGELOG
 
-## v0.1.1 (Unreleased)
+## v0.1.1
 
-#### IMPROVEMENTS
+#### CHANGES
 
+- [2020-09-24] Fixed required provider-version
 - [2020-09-24] Improved variable descriptions
 
 ---
