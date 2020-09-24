@@ -2,6 +2,7 @@
 
 Note that no parameters are required, even if terrafor registry states them as required
 A minimum of parameters SHOULD be:
+
 ```bash
 - target_adresses
 - connection_username
@@ -27,6 +28,7 @@ You can pass the following files to the ansible provisioner (as a base64-encoded
 ```
 
 Default executed commands:
+
 ```bash
 # Change to ansible root folder
 cd /tmp/ansible
@@ -39,6 +41,7 @@ ansible-playbook playbook.yml
 ```
 
 ## Examples
+
 ```bash
 module "install_something" {
   source  = "Kreditorforeningens-Driftssentral-DA/remote-excec-ansible/null"
@@ -50,4 +53,4 @@ module "install_something" {
   connection_port     = 22
 }
 ```
-See the 'example' folder
+See the 'example' folder for working example
