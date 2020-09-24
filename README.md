@@ -1,4 +1,4 @@
-# terraform-null-remote-excec-ansible
+# TERRAFORM NULL MODULE (remote-excec-ansible)
 
 NOTE: No parameters are actually required, even if terraform registry states they are.
 
@@ -42,4 +42,4 @@ ansible-playbook playbook.yml
 
 ## EXAMPLES
 
-See the 'example' folder
+See the 'example' folder for working examples
