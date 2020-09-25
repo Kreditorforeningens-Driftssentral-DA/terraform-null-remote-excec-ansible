@@ -26,12 +26,6 @@ resource "null_resource" "main" {
     cacert   = local.winrm.cacert
   }
 
-  # REMOVE
-  provisioner "local-exec" {
-    interpreter = ["PowerShell","-Command"]
-    command     = "Get-Date"
-  }
-
   # Create ansible folders on remote host
   provisioner "remote-exec" {
     inline = [

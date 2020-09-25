@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v0.1.2 (Unreleased)
+
+#### CHANGES
+
+- [2020-09-25] Removed debug-test from resource..
+- [2020-09-25] Removed comments
+- [2020-09-25] Updated README-example
+
+---
+
 ## v0.1.1
 
 #### CHANGES
@@ -9,7 +19,7 @@
 
 ---
 
-## v0.1.0 
+## v0.1.0 (No release)
 
 #### CHANGES
 

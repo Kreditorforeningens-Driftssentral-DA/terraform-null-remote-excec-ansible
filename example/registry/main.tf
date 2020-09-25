@@ -1,6 +1,6 @@
 module "install_nomad" {
   source  = "Kreditorforeningens-Driftssentral-DA/remote-excec-ansible/null"
-  version = "0.1.0"
+  version = "0.1.1"
   # --
   target_adresses     = local.targets
   connection_username = local.ssh_username

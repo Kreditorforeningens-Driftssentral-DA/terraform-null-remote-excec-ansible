@@ -1,6 +1,6 @@
 locals {
+
   connection = {
-    # { this line is included due to visual bug in editor, and serves no purpose }
     type        = var.connection_type
     username    = var.connection_username
     password    = var.connection_password
@@ -9,7 +9,6 @@ locals {
   }
 
   ssh = {
-    # { this line is included due to visual bug in editor, and serves no purpose }
     private_key    = var.ssh_private_key
     certificate    = var.ssh_certificate
     agent          = var.ssh_agent
@@ -18,7 +17,6 @@ locals {
   }
 
   winrm = {
-    # { this line is included due to visual bug in editor, and serves no purpose }
     https    = var.winrm_https
     insecure = var.winrm_insecure
     use_ntlm = var.winrm_use_ntlm
@@ -26,7 +24,6 @@ locals {
   }
 
   ansible = {
-    # { this line is included due to visual bug in editor, and serves no purpose }
     settings     = var.ansible_settings_b64     != null ? var.ansible_settings_b64     : filebase64("${path.module}/templates/ansible.cfg")
     hosts        = var.ansible_hosts_b64        != null ? var.ansible_hosts_b64        : filebase64("${path.module}/templates/all.yml")
     requirements = var.ansible_requirements_b64 != null ? var.ansible_requirements_b64 : filebase64("${path.module}/templates/requirements.yml")
@@ -36,12 +33,12 @@ locals {
 }
 
 # ===============================================
-#  Provisioning targets
+# OPTIONAL overrides
 # ===============================================
 
 variable "target_adresses" {
   type        = list(string)
-  description = "(Optional) List of target addresses to provision"
+  description = "(Optional) List of addresses to run provisioning on."
   default     = []
 }
 
@@ -70,25 +67,25 @@ variable "winrm_cacert"        { default = null }
 
 variable "ansible_settings_b64" {
   type        = string
-  description = "(Optional) Ansible settings-file. Provide as a base64encoded string"
+  description = "(Optional) Ansible settings-file. Provide as a base64encoded string."
   default     = null
 }
 
 variable "ansible_hosts_b64"{
   type        = string
-  description = "(Optional) Ansible hosts-file. Provide as a base64encoded string"
+  description = "(Optional) Ansible hosts-file. Provide as a base64encoded string."
   default     = null
 }
 
 variable "ansible_requirements_b64" {
   type        = string
-  description = "(Optional) Requirements-file processed by ansible-galaxy before running playbook. Provide as a base64encoded string"
+  description = "(Optional) Requirements-file processed by ansible-galaxy before running playbook. Provide as a base64encoded string."
   default     = null
 }
 
 variable "ansible_playbook_b64" {
   type        = string
-  description = "(Optional) Playbook executed by ansible. Provide as a base64encoded string"
+  description = "(Optional) Playbook executed by ansible. Provide as a base64encoded string."
   default     = null
 }
 

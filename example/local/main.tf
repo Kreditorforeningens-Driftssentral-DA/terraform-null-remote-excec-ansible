@@ -1,4 +1,3 @@
-# Using active branch as source
 module "install_nomad" {
   source = "../../."
   # --
@@ -7,4 +6,3 @@ module "install_nomad" {
   connection_password = local.ssh_password
   connection_port     = local.ssh_port
 }
-
