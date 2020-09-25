@@ -1,6 +1,7 @@
 # TERRAFORM NULL MODULE ([remote-excec-ansible](https://registry.terraform.io/modules/Kreditorforeningens-Driftssentral-DA/remote-excec-ansible/null/0.1.1))
 
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Kreditorforeningens-Driftssentral-DA/terraform-null-remote-excec-ansible)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/Kreditorforeningens-Driftssentral-DA/terraform-null-remote-excec-ansible)
 ![GitHub issues](https://img.shields.io/github/issues/Kreditorforeningens-Driftssentral-DA/terraform-null-remote-excec-ansible)
 
 **NOTE: No parameters are actually required, even if terraform registry states they are.**
