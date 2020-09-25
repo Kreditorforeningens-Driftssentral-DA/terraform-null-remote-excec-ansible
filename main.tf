@@ -3,7 +3,6 @@ resource "null_resource" "main" {
 
   # Re-run in case any addresses change
   triggers = {
-    # { this line is included due to visual bug in editor, and serves no purpose }
     id = join(";", var.target_adresses)
   }
 
@@ -25,12 +24,6 @@ resource "null_resource" "main" {
     insecure = local.winrm.insecure
     use_ntlm = local.winrm.use_ntlm
     cacert   = local.winrm.cacert
-  }
-
-  # REMOVE
-  provisioner "local-exec" {
-    interpreter = ["PowerShell","-Command"]
-    command     = "Get-Date"
   }
 
   # Create ansible folders on remote host
