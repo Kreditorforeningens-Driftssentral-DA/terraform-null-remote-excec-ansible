@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v0.1.3
+
+#### CHANGES
+
+- [2020-09-28] Replaced 'count' with 'for_each'
+- [2020-09-28] Fixed typo: adresses -> addresses
+
+
 ## v0.1.2
 
 #### CHANGES
