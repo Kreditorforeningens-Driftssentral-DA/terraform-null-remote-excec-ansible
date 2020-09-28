@@ -1,4 +1,4 @@
-# TERRAFORM NULL MODULE ([remote-excec-ansible](https://registry.terraform.io/modules/Kreditorforeningens-Driftssentral-DA/remote-excec-ansible/null/0.1.1))
+# TERRAFORM NULL MODULE ([remote-excec-ansible](https://registry.terraform.io/modules/Kreditorforeningens-Driftssentral-DA/remote-excec-ansible/null))
 
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Kreditorforeningens-Driftssentral-DA/terraform-null-remote-excec-ansible)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/Kreditorforeningens-Driftssentral-DA/terraform-null-remote-excec-ansible)
@@ -54,6 +54,15 @@ ansible-playbook playbook.yml
 ## EXAMPLES
 
 ```bash
+
+# /example
+# |--- terraform
+# |    |--- main.tf
+# |    |--- playbook.yml
+# |    |--- requirements.yml
+# |    |--- .secrets
+# |    |    |--- id_rsa
+
 module "vms" {
   source  = "www-aiqu-no/linux-vm/vsphere"
   version = "0.2.0"
@@ -63,7 +72,7 @@ module "vms" {
 
 module "provisioning" {
   source  = "Kreditorforeningens-Driftssentral-DA/remote-excec-ansible/null"
-  version = "0.1.1"
+  version = "0.1.3"
   # --
   target_adresses     = module.vms.ip
   connection_username = local.ansible.username
@@ -75,6 +84,8 @@ module "provisioning" {
 
 locals {
   ansible = {
+    username         = "ansible"
+    private_key      = file("${path.module}/.secrets/id_rsa")
     playbook_b64     = filebase64("${path.module}/playbook.yml")
     requirements_b64 = filebase64("${path.module}/requirements.yml")
   }

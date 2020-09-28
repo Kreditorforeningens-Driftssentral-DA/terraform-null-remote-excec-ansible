@@ -36,7 +36,7 @@ locals {
 # OPTIONAL overrides
 # ===============================================
 
-variable "target_adresses" {
+variable "target_addresses" {
   type        = list(string)
   description = "(Optional) List of addresses to run provisioning on."
   default     = []

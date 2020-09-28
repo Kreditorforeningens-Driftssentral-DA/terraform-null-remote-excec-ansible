@@ -1,13 +1,15 @@
 resource "null_resource" "main" {
-  count = length(var.target_adresses)
+  #count = length(var.target_addresses)
+  for_each = toset(var.target_addresses)
 
   # Re-run in case any addresses change
   triggers = {
-    id = join(";", var.target_adresses)
+    id = join(";", var.target_addresses)
   }
 
   connection {
-    host     = element(var.target_adresses,count.index)
+    #host     = element(var.target_addresses,count.index)
+    host     = each.key
     port     = local.connection.port
     type     = local.connection.type
     user     = local.connection.username
